@@ -160,7 +160,7 @@ mod tests {
     fn u64_gen() {
         let mut rng = ChaChaRng::from_seed(SEED);
 
-        const EXPECTED: [u64; 32] = [
+        const EXPECTED: [u64; 16] = [
             0x903df1a0ade0b876,
             0x28bd8653e56a5d40,
             0x1aed8da0b819d2bd,
@@ -170,29 +170,13 @@ mod tests {
             0x1ca11815f4b8436a,
             0x8665eeb269b687c3,
             0x7a385155bee7079f,
-            0xd082d737c97ba98,
+            0x0d082d737c97ba98,
             0x6965e348a0290fcb,
             0xed7aee323e53c612,
             0x434ee69c7621b729,
             0xd539d874b03371d5,
             0x45fb0a51281fed31,
             0x6f4d794b1f0ae1ac,
-            0xe16c2663e6a0092d,
-            0x75a0681908d17eae,
-            0xc662d37b998e718e,
-            0x5db3a0a93446c3b0,
-            0xf5d7b1f68372701,
-            0x1ebc58e4fd3a1e28,
-            0xc094cfc913d3d273,
-            0xf248a2406271f35f,
-            0x6b56b3d758a02013,
-            0xabfd23eaada20d5,
-            0x732785fb20b1b8c5,
-            0xa4915cb4349763c3,
-            0x2e0d84f883cbd42d,
-            0x3fac62101358b1ed,
-            0x5618cd6dfff82c1f,
-            0x7e1667316c1e6ae8,
         ];
 
         for expected in EXPECTED.iter() {
