@@ -217,4 +217,25 @@ mod tests {
         assert_eq!(a[..], EXPECTED_A[..]);
         assert_eq!(b[..], EXPECTED_B[..]);
     }
+
+    #[test]
+    fn stream() {
+        let mut rng = ChaChaRng::from_seed(SEED);
+        rng.set_stream(0xb61e6e6a48c285u64.to_le());
+
+        const EXPECTED: [u32; 32] = [
+            0x3fa865f8, 0xcc53c4a6, 0xe1a9bb4a, 0x321a1962, 0xfa0d984f, 0x1073a4d4, 0xbcc96d46,
+            0x34844c3c, 0xb517199b, 0xde11cc87, 0x2c73cbfa, 0x194204f9, 0x4d71451e, 0xd5d7b9a7,
+            0xa3eb1a0b, 0x5b17ee8a, 0x654c6867, 0x8282050c, 0x325604f6, 0x13c681b8, 0xfc1bddcc,
+            0x93c1299e, 0x6ae1f5c3, 0x7915dfad, 0xbe635958, 0x878e07d8, 0x1b9437ff, 0x1611b826,
+            0xc0f16fe1, 0x831520c6, 0xa7570c72, 0x700b6066,
+        ];
+
+        let mut array = [0u32; 32];
+        rng.fill(&mut array[..]);
+
+        array.iter().for_each(|value| println!("0x{:08x},", value));
+
+        assert_eq!(array[..], EXPECTED[..]);
+    }
 }
