@@ -297,7 +297,7 @@ mod tests {
     #[test]
     fn stream() {
         let mut rng = ChaChaRng::from_seed(SEED);
-        rng.set_stream(0xb61e6e6a48c285u64.to_le());
+        rng.set_stream(0xb61e6e6a48c285u64);
 
         const EXPECTED: [u32; 32] = [
             0x3fa865f8, 0xcc53c4a6, 0xe1a9bb4a, 0x321a1962, 0xfa0d984f, 0x1073a4d4, 0xbcc96d46,
